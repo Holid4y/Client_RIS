@@ -11,12 +11,12 @@ interface Friend {
 }
 
 const friendsData: Friend[] = [
-    { id: 1, firstName: 'Anna', lastName: 'Smith', image: '/src/assets/img/people/women/01.jpg', status: 'Online', description: 'Loves hiking and photography.' },
-    { id: 2, firstName: 'Jane', lastName: 'Doe', image: '/src/assets/img/people/women/02.jpg', status: 'Offline', description: 'Passionate about music and art.' },
-    { id: 3, firstName: 'Emily', lastName: 'Johnson', image: '/src/assets/img/people/women/03.jpg', status: 'Online', description: 'Enjoys reading and traveling.' },
-    { id: 4, firstName: 'Sara', lastName: 'Williams', image: '/src/assets/img/people/women/04.jpg', status: 'Away', description: 'Loves cooking and gardening.' },
-    { id: 5, firstName: 'Kate', lastName: 'Brown', image: '/src/assets/img/people/women/05.jpg', status: 'Online', description: 'Fitness enthusiast and yogi.' },
-    { id: 6, firstName: 'Lauraqweqweqwe', lastName: 'Jonqweqweqwes', image: '/src/assets/img/people/women/06.jpg', status: 'Offline', description: 'Enjoys painting and nature walks.' }
+    { id: 1, firstName: 'Anna', lastName: 'Smith', image: 'images/people/women/01.jpg', status: 'Online', description: 'Loves hiking and photography.' },
+    { id: 2, firstName: 'Jane', lastName: 'Doe', image: 'images/people/women/02.jpg', status: 'Offline', description: 'Passionate about music and art.' },
+    { id: 3, firstName: 'Emily', lastName: 'Johnson', image: 'images/people/women/03.jpg', status: 'Online', description: 'Enjoys reading and traveling.' },
+    { id: 4, firstName: 'Sara', lastName: 'Williams', image: 'images/people/women/04.jpg', status: 'Away', description: 'Loves cooking and gardening.' },
+    { id: 5, firstName: 'Kate', lastName: 'Brown', image: 'images/people/women/05.jpg', status: 'Online', description: 'Fitness enthusiast and yogi.' },
+    { id: 6, firstName: 'Lauraqweqweqwe', lastName: 'Jonqweqweqwes', image: 'images/people/women/06.jpg', status: 'Offline', description: 'Enjoys painting and nature walks.' }
 ];
 
 const FriendsList: React.FC = () => {

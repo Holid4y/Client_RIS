@@ -23,13 +23,13 @@ const Home: React.FC = () => {
                         <div className='carusel'>
                             <Carusel>
                                 {[
-                                    '../../../src/assets/img/people/women/02.jpg',
-                                    '../../src/assets/img/people/women/02.jpg',
-                                    'src/assets/img/people/women/03.jpg',
-                                    '/src/assets/img/people/women/04.jpg',
-                                    '/src/assets/img/people/women/06.jpg',
-                                    '/src/assets/img/people/women/07.jpg',
-                                    '/src/assets/img/people/women/08.jpg',
+                                    'images/people/women/01.jpg',
+                                    'images/people/women/02.jpg',
+                                    'images/people/women/03.jpg',
+                                    'images/people/women/04.jpg',
+                                    'images/people/women/06.jpg',
+                                    'images/people/women/07.jpg',
+                                    'images/people/women/08.jpg',
                                 ].map((src, index) => (
                                     <img key={index} src={src} alt={`Image ${index + 1}`} />
                                 ))}
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
                                 <span className="title">Мои треки</span>
                             </div>
                             <div className="card">
-                                <img src="/src/assets/img/albom/albom-0003.jpg" alt="Card Image"/>
+                                <img src="images/albom/albom-0003.jpg" alt="Card Image"/>
                                 <div className="content">
                                     <div className="content-info">
                                         <span className="title-span">Холод</span>
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
                                 </div>
                             </div>
                             <div className="card">
-                                <img src="/src/assets/img/albom/albom-0003.jpg" alt="Card Image"/>
+                                <img src="images/albom/albom-0003.jpg" alt="Card Image"/>
                                 <div className="content">
                                     <div className="content-info">
                                         <span className="title-span">Холод</span>
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
                                 </div>
                             </div>
                             <div className="card">
-                                <img src="/src/assets/img/albom/albom-0003.jpg" alt="Card Image"/>
+                                <img src="images/albom/albom-0003.jpg" alt="Card Image"/>
                                 <div className="content">
                                     <div className="content-info">
                                         <span className="title-span">Холод</span>

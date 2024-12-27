@@ -8,7 +8,7 @@ function NewMusicAccordion() {
             </div>
             <div className="media-container block">
                 <div className="card">
-                    <img src="/src/assets/img/albom/albom-0002.jpg" alt="Card Image"/>
+                    <img src="images/albom/albom-0002.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Холод</span>
@@ -17,7 +17,7 @@ function NewMusicAccordion() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/albom/albom-0003.jpg" alt="Card Image"/>
+                    <img src="images/albom/albom-0003.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Холод</span>
@@ -26,7 +26,7 @@ function NewMusicAccordion() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/albom/albom-0004.jpg" alt="Card Image"/>
+                    <img src="images/albom/albom-0004.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Холод</span>
@@ -35,7 +35,7 @@ function NewMusicAccordion() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/albom/albom-0005.jpg" alt="Card Image"/>
+                    <img src="images/albom/albom-0005.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Холод</span>
@@ -50,7 +50,7 @@ function NewMusicAccordion() {
                     <span className="title">Треки</span>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/albom/albom-0003.jpg" alt="Card Image"/>
+                    <img src="images/albom/albom-0003.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Холод</span>
@@ -63,7 +63,7 @@ function NewMusicAccordion() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/albom/albom-0002.jpg" alt="Card Image"/>
+                    <img src="images/albom/albom-0002.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Холод</span>
@@ -76,7 +76,7 @@ function NewMusicAccordion() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/albom/albom-0001.jpg" alt="Card Image"/>
+                    <img src="images/albom/albom-0001.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Холод</span>

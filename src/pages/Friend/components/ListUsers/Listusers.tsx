@@ -12,7 +12,7 @@ function Listuser() {
 
             <div className="media-container block" id="mediaContainer">
                 <div className="card">
-                    <img src="/src/assets/img/people/women/01.jpg" alt="Card Image"/>
+                    <img src="images/people/women/01.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Максим</span>
@@ -24,7 +24,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/02.jpg" alt="Card Image"/>
+                    <img src="images/people/women/02.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Дмитрий</span>
@@ -36,7 +36,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/03.jpg" alt="Card Image"/>
+                    <img src="images/people/women/03.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Денис</span>
@@ -48,7 +48,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/04.jpg" alt="Card Image"/>
+                    <img src="images/people/women/04.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Александр</span>
@@ -60,7 +60,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/05.jpg" alt="Card Image"/>
+                    <img src="images/people/women/05.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Илья</span>
@@ -72,7 +72,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/06.jpg" alt="Card Image"/>
+                    <img src="images/people/women/06.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Миша</span>
@@ -84,7 +84,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/07.jpg" alt="Card Image"/>
+                    <img src="images/people/women/07.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Сергей</span>
@@ -96,7 +96,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/08.jpg" alt="Card Image"/>
+                    <img src="images/people/women/08.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Евгений</span>
@@ -108,7 +108,7 @@ function Listuser() {
                     </div>
                 </div>
                 <div className="card">
-                    <img src="/src/assets/img/people/women/09.jpg" alt="Card Image"/>
+                    <img src="images/people/women/09.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
                             <span className="title-span">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, tenetur!</span>

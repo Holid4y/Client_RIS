@@ -2,7 +2,7 @@ function Infouser() {
     return (
         <div className='profile-header'>
             <div className='logo'>
-                <img src="/src/assets/img/people/women/08.jpg" alt="Profile" />
+                <img src="images/people/women/08.jpg" alt="Profile" />
                 <div className='info-user'>
                     <span>Oleg Yurlov</span>
                     <small className='status online'></small>
