@@ -24,8 +24,8 @@ const Home: React.FC = () => {
                             <Carusel>
                                 {[
                                     '../../../src/assets/img/people/women/02.jpg',
-                                    './src/assets/img/people/women/02.jpg',
-                                    '/src/assets/img/people/women/03.jpg',
+                                    '../../src/assets/img/people/women/02.jpg',
+                                    'src/assets/img/people/women/03.jpg',
                                     '/src/assets/img/people/women/04.jpg',
                                     '/src/assets/img/people/women/06.jpg',
                                     '/src/assets/img/people/women/07.jpg',
