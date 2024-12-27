@@ -1,4 +1,10 @@
-function Header({ isCollapsed }) {
+import React from 'react';
+
+interface HeaderProps {
+    isCollapsed: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ isCollapsed }) => {
     return (
         <header>
             <div className="container">

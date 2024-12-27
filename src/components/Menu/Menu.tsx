@@ -1,9 +1,12 @@
 import React from 'react';
-import { useMenu } from '../../context/MenuContext';
 import MenuItem from './MenuItem';
 
-const Menu: React.FC = () => {
-    const { isCollapsed, handleCollapse } = useMenu();
+interface MenuProps {
+    isCollapsed: boolean;
+    handleCollapse: () => void;
+}
+
+const Menu: React.FC<MenuProps> = ({ isCollapsed, handleCollapse}) => {
 
     return (
         <ul className={`menu ${isCollapsed ? 'collapsed' : ''}`}>
