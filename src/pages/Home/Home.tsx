@@ -5,6 +5,7 @@ import Menu from '../../components/Menu/Menu';
 import Carusel from './components/Carusel/Carusel';
 import Friends from './components/FriendsList/FriendsList'
 import Infouser from './components/InfoUser/Infouser';
+import MenuMobile from '../../components/Menu/Mobile/MenuMobile';
 
 const Home: React.FC = () => {
     const { isCollapsed, handleCollapse } = useMenu();
@@ -90,7 +91,7 @@ const Home: React.FC = () => {
             </main>
 
             <footer>
-                меню для мобилок
+                <MenuMobile />
             </footer>
         </>
     );

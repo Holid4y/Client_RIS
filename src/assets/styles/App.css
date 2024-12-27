@@ -178,14 +178,35 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: var(--bs-second-bg); /* Цвет */
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 2px 5px var(--bs-body-bg);
     z-index: 1000;
-    background: #fff;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
     text-align: center;
 }
 
 /* 🌟 Боковое меню */
+
+.menu_mobile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    height: 40px;
+}
+.menu_mobile .menu-link{
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.menu_mobile .menu-link.active{
+    background-color: var(--bs-body-bg);
+}
+
+
 .menu{
     width: 100%;
     list-style-type: none;

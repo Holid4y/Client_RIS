@@ -3,6 +3,7 @@ import { useMenu } from '../../context/MenuContext'; // Импортируем �
 import Header from '../../components/Header/Header';
 import Menu from '../../components/Menu/Menu';
 import Listuser from './components/ListUsers/Listusers';
+import MenuMobile from '../../components/Menu/Mobile/MenuMobile';
 
 const Friend: React.FC = () => {
     const { isCollapsed, handleCollapse } = useMenu(); // Получаем состояние и функцию
@@ -24,7 +25,7 @@ const Friend: React.FC = () => {
                 </div>
             </main>
             <footer>
-                меню для мобилок
+                <MenuMobile/>
             </footer>
         </>
     );

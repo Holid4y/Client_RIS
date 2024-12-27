@@ -6,6 +6,7 @@ import Menu from '../../components/Menu/Menu';
 import MainAccordion from './components/Main_accordion';
 import SecurityAccordion from './components/Security_accordion';
 import PrivacyAccordion from './components/Privacy_accordion';
+import MenuMobile from '../../components/Menu/Mobile/MenuMobile';
 
 const Setting: React.FC = () => {
     const { isCollapsed, handleCollapse } = useMenu(); // Получаем состояние и функцию
@@ -70,7 +71,7 @@ const Setting: React.FC = () => {
                 </div>
             </main>
             <footer>
-                меню для мобилок
+                <MenuMobile/>
             </footer>
         </>
     );

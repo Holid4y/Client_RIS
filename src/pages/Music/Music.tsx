@@ -6,6 +6,7 @@ import Menu from '../../components/Menu/Menu';
 import MyMusicAccordion from './components/MyMusicAccordion';
 import PopularMusicAccordion from './components/PopularMusicAccordion';
 import NewMusicAccordion from './components/NewMusicAccordion';
+import MenuMobile from '../../components/Menu/Mobile/MenuMobile';
 
 const Music: React.FC = () => {
     const { isCollapsed, handleCollapse } = useMenu(); // Получаем состояние и функцию
@@ -70,7 +71,7 @@ const Music: React.FC = () => {
                 </div>
             </main>
             <footer>
-                меню для мобилок
+                <MenuMobile/>
             </footer>
         </>
     );

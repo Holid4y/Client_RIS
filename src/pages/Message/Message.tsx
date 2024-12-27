@@ -2,6 +2,7 @@ import React from 'react';
 import { useMenu } from '../../context/MenuContext'; // Импортируем хук
 import Header from '../../components/Header/Header';
 import Menu from '../../components/Menu/Menu';
+import MenuMobile from '../../components/Menu/Mobile/MenuMobile';
 
 const Message: React.FC = () => {
     const { isCollapsed, handleCollapse } = useMenu(); // Получаем состояние и функцию
@@ -23,7 +24,7 @@ const Message: React.FC = () => {
                 </div>
             </main>
             <footer>
-                меню для мобилок
+                <MenuMobile/>
             </footer>
         </>
     );
