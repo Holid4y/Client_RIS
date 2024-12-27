@@ -1,0 +1,284 @@
+/* Общие стили для карточек */
+.media-container {
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 25px;
+}
+
+.top-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 0px 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--bs-body-color);
+}
+
+.view-all {
+    font-size: 14px;
+    color: var(--bs-body-color);
+    text-decoration: none;
+}
+
+/* Линейное отображение */
+.media-container.line .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    outline: solid 1px rgba(255, 255, 255, 0);
+    transition: outline .3s ease;
+    cursor: pointer;
+}
+.media-container.line .card:hover {
+    outline: solid 1px var(--bs-outline-bg);
+}
+
+/* Карточки с кнопкой справа от текста (линейные) */
+.media-container.line .card .content {
+    flex-grow: 1; /* Текст и содержимое занимают оставшееся пространство */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.media-container.line .card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+
+/* Блочные карточки */
+.media-container.block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.media-container.mini-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+}
+
+/* Карточки с кнопкой справа от текста (блочные) */
+.media-container.block .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    outline: solid 1px #2e2e2e;
+}
+
+
+.media-container.block .card .content {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.media-container.block .card img {
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 4px 4px;
+}
+
+
+/* Контейнер для карточек */
+.media-container.block {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.media-container.mini-block .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px;
+}
+.media-container.mini-block .card:hover {
+    outline: solid 1px #2e2e2e;
+}
+
+.media-container.mini-block .card .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    color: #C9CCCF;
+}
+
+.media-container.mini-block .card .content .title-span{
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.title-span{
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--bs-body-color);
+}
+.content small{
+    font-size: 14px;
+    color: var(--bs-body-second-color);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.time {
+    font-size: 12px;
+    color: var(--bs-body-second-color);
+}
+
+.media-container.line .content .content-info{
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.media-container.block .content {
+    padding: 15px 5px 5px 5px;
+}
+.media-container.block .content .content-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.media-container.mini-block .content {
+    padding: 5px;
+}
+.media-container.mini-block .content .content-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Стиль кнопки с изображением */
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.media-container.line .content .icon-btn img {
+    width: 25px;
+    height: 25px;
+}
+.media-container.line .content .icon-btn{
+    padding-right: 5px;
+}
+.media-container.block .content .icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-left: 5px; /* отступ между контентом и кнопкой */
+}
+.media-container.block .content .icon-btn img {
+    width: 28px;
+    height: 26px;
+}
+/* Плавное выравнивание блоков */
+.media-container.block .content-info small {
+    font-size: 0.9rem;
+}
+/* Медиа-элементы внутри карточки */
+.card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.media-container.line .content-info .chat-info img{
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+.chat-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-info small{
+    margin-left: 10px;
+}
+
+/* Дополнительные стили */
+@media (max-width: 768px) {
+    .media-container.block {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+@media (max-width: 480px) {
+    .media-container.block {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    .media-container.line .content .content-info{ max-width: 200px; }
+}
+
+@media (min-width: 480px) {
+    .media-container.line .content .content-info{ max-width: 300px; }
+}
+@media (min-width: 768px) {
+    .media-container.line .content .content-info{ max-width: 500px; }
+}
+@media (min-width: 992px) {
+    .media-container.line .content .content-info{ max-width: 600px; }
+}
+@media (min-width: 1200px) {
+    .media-container.line .content .content-info{ max-width: 600px; }
+}
+@media (min-width: 1400px) {
+    .media-container.line .content .content-info{ max-width: 600px; }
+}

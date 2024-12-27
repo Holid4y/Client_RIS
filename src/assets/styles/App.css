@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Переменные для светлой темы */
+:root, [data-bs-theme="light"] {
+    --bs-body-bg: #e6eaee;  /* Светлый 0 цвет */
+    --bs-second-bg: #f8f9fa; /* Светлый 1 цвет */
+    --bs-second-bg-rgb: 248, 249, 250; /* Светлый 1 цвет rgb */
+    --bs-second-bg-active: #f8f9fa; /* Светлый 1 цвет - нажатие */
+    --bs-third-bg: #dbdbdb; /* Светлый 2 цвет */
+    --bs-outline-bg: #dbdbdb; /* Цвет для outline'а */
+
+    --bs-radius: 10px;
+
+    --bs-leaner-gradient: linear-gradient(90deg, rgb(197, 204, 216, .5) 0%, rgba(230, 234, 238, 1) 74%);
+
+    --bs-body-color: #575757; /* Цвет текста */
+    --bs-body-second-color: #646464; /* Второй цвет текста */
+
+    --bs-accent-color: #49e2c1; /* Зеленый */
+    --bs-red-color: #e24949; /* Красный */
+    --bs-warning-color: #E2B749; /* Оранжевый */
+
+    --bs-accent-color-hover: #2ea188; /* Зеленый - наведение */
+    --bs-red-color-hover: #bd3d3d; /* Красный - наведение */
+    --bs-warning-color-hover: #b6933b; /* Оранжевый - наведение */
+
+    --bs-shadow: rgba(172, 170, 170, 0.2); /* Тень */
+    --bs-white-color: #FFFFFF;
+}
+
+/* Переменные для темной темы */
+[data-bs-theme="dark"] {
+    color-scheme: dark; /* Объявляем цветовую схему для браузера */
+    --bs-body-bg: #161617; /* Темный 0 цвет */
+    --bs-second-bg: #232324; /* Темный 1 цвет */
+    --bs-second-bg-rgb: 35, 35, 36; /* Темный 1 цвет rgb */
+    --bs-second-bg-active: #222224; /* Светлый 1 цвет - нажатие */
+    --bs-third-bg: #2f2d2f; /* Темный 2 цвет */
+    --bs-outline-bg: #2e2e2e; /* Цвет для outline'а */
+    --bs-border-bg: #474747; /* Цвет для outline'а */
+
+    --bs-leaner-gradient: linear-gradient(90deg, rgb(46, 46, 46, .5) 0%, rgba(22, 22, 23, 1) 74%);
+
+    --bs-body-color: #c9cccf; /* Цвет текста */
+    --bs-body-second-color: #b0b0b0; /* Второй цвет текста */
+
+    --bs-accent-color: #49e2c1; /* Зеленый */
+    --bs-red-color: #e24949; /* Красный */
+    --bs-warning-color: #E2B749; /* Оранжевый */
+
+    --bs-accent-color-hover: #2ea188; /* Зеленый - наведение */
+    --bs-red-color-hover: #bd3d3d; /* Красный - наведение */
+    --bs-warning-color-hover: #b6933b; /* Оранжевый - наведение */
+
+    --bs-shadow: rgba(0, 0, 0, 0.2); /* Тень */
+    --bs-white-color: #FFFFFF;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 🌟 Body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* 🌟 Header */
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    top: 0;
+    background: var(--bs-second-bg); /* Цвет */
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 2px 5px var(--bs-body-bg);
+    z-index: 1000;
+}
+
+header .container-left, header .container-right{
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    width: 100%;
+    padding: 10px;
+    transition: max-width 0.3s ease;
+}
+header .container-left{ justify-content: start; }
+header .container-right{ justify-content: end; }
+
+header .container-left.collapsed {
+    max-width: 80px;
+}
+
+header .container-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0px 10px;
+}
+
+/* 🌟 Main */
+main {
+    display: flex;
+    flex: 1;
+    margin-top: 60px; /* Отступ для header */
+    overflow: hidden; /* Предотвращаем прокрутку main */
+    height: calc(100vh - 60px); /* Высота с учётом header */
+}
+
+/* 🌟 Боковые блоки */
+main .container-left, main .container-right {
+    display: flex;
+    max-width: 250px;
+    width: 100%;
+    padding: 10px;
+    flex-shrink: 0;
+    transition: max-width 0.3s ease;
+}
+main .container-left{ justify-content: start; }
+main .container-right{ justify-content: end; }
+
+main .container-left.collapsed {
+    max-width: 80px;
+}
+
+/* 🌟 Центральный блок */
+main .container-center {
+    flex: 1;
+    overflow-y: auto; /* Только центральный контент прокручивается */
+    padding: 10px;
+    min-height: 0; /* Ключ для корректной прокрутки */
+}
+
+.scroll-hidden {
+    overflow: scroll; /* Включаем прокрутку */
+    scrollbar-width: none; /* Для Firefox */
+    -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+}
+
+/* Для Chrome, Safari и Opera */
+.scroll-hidden::-webkit-scrollbar {
+    display: none; /* Полностью скрываем скроллбар */
+}
+
+/* 🌟 Footer */
+footer {
+    display: none; /* По умолчанию скрыт */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+}
+
+/* 🌟 Боковое меню */
+.menu{
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transition: width 0.3s ease;
+}
+
+.menu li {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    line-height: 2;
+    color: var(--bs-body-color);
+    padding: 15px 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: var(--bs-radius);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu li[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    background-color: var(--bs-second-bg);
+    padding: 5px 10px;
+    border-radius: var(--bs-radius);
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 10;
+    box-shadow: 0px 0px 1px var(--bs-body-bg);
+}
+
+.menu.collapsed li[data-tooltip]::after {
+    opacity: 0;
+    visibility: hidden;
+}
+.tooltip-text span {
+    filter: invert(1); /* Инвертируем только текст внутри span */
+}
+
+.menu.collapsed li[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Позиционирование tooltip */
+.menu li[data-placement="right"]::after {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+.menu li .hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Отключаем кликабельность */
+}
+.menu a.active li {
+    background-color: var(--bs-second-bg);
+}
+.menu li:hover {
+    background-color: var(--bs-second-bg);
+}
+.menu li:active {
+    background-color: var(--bs-second-bg-active);
+}
+
+.menu li span{
+    margin-left: 15px;
+    transform: translateX(0);
+    transition: opacity .3s ease, transform .3s ease;
+}
+.menu li img{
+    height: 20px;
+    width: 20px;
+}
+
+.menu:not(.collapsed) .menu-link span {
+    opacity: 1;
+}
+
+/* 🌟 Плавное исчезновение текста в меню */
+.menu.collapsed li span {
+    opacity: 0; /* Прячем текст */
+    transform: translateX(-10px);
+}
+
+.svg-icon{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: currentColor; /* Наследует цвет текста */
+    fill: transparent;
+    /* fill: transparent;
+    color: var(--bs-body-color); */
+}
+
+.jost-custom {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 30px;
+    color: var(--bs-body-color);
+}
+
+
+/* 🌟 Accordion */
+.accordion-content {
+    padding-top: 15px;
+    display: none;
+}
+.accordion-content.show {
+    display: block;
+}
+
+
+/* 🌟 Стили для кнопок */
+.btn{
+    font-size: 14px;
+    background-color: var(--bs-second-bg);
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid var(--bs-outline-bg);
+    border-radius: var(--bs-radius);
+    color: var(--bs-white-color);
+    transition: all .2s;
+    width: 100%;
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn.sm{
+    font-size: 14px;
+    background-color: var(--bs-second-bg);
+    padding: 10px;
+    outline: none;
+    border: 1px solid var(--bs-outline-bg);
+    border-radius: var(--bs-radius);
+    color: var(--bs-white-color);
+    transition: all .2s;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.btn.primary{
+    background-color: var(--bs-outline-bg);
+    border: 1px solid var(--bs-accent-color);
+}
+.btn.secondary{
+    border: 1px solid var(--bs-outline-bg);
+    color: var(--bs-accent-color);
+}
+.btn.danger{
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-red-color);
+    color: var(--bs-red-color);
+}
+.btn.dangerLarg{
+    background-color: var(--bs-second-bg);
+    padding: 15px 0px;
+    border: 1px solid var(--bs-red-color);
+    color: var(--bs-red-color);
+}
+.btn.warning{
+    border: 1px solid var(--bs-warning-color);
+    color: var(--bs-warning-color);
+}
+.btn.dark{
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-second-bg);
+    color: var(--bs-body-color);
+}
+
+.btn.primary:hover{
+    background-color: var(--bs-accent-color-hover);
+    border: 1px solid var(--bs-accent-color);
+}
+.btn.secondary:hover{
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-outline-bg);
+    color: var(--bs-accent-color);
+}
+.btn.danger:hover{
+    background-color: var(--bs-red-color);
+    color: var(--bs-white-color);
+}
+.btn.dangerLarg:hover{
+    background-color: var(--bs-red-color);
+    color: var(--bs-white-color);
+}
+.btn.warning:hover{
+    background-color: var(--bs-warning-color);
+    color: var(--bs-white-color);
+}
+.btn.dark:hover{
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-outline-bg);
+    color: var(--bs-body-color);
+}
+.btn.light:hover{
+    border: 1px solid var(--bs-accent-color);
+    color: var(--bs-accent-color);
+}
+
+.btn.primary:active{
+    background-color: var(--bs-accent-color-hover);
+    border: 1px solid var(--bs-accent-color-hover);
+}
+.btn.secondary:active{
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-border-bg);
+}
+.btn.danger:active{
+    background-color: var(--bs-red-color-hover);
+    color: var(--bs-white-color);
+}
+.btn.warning:active{
+    background-color: var(--bs-warning-color-hover);
+    color: var(--bs-white-color);
+}
+.btn.dark:active{
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-border-bg);
+    color: var(--bs-body-color);
+}
+.btn.light:active{
+    border: 1px solid var(--bs-accent-color-hover);
+    color: var(--bs-accent-color-hover);
+}
+
+.group-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    overflow-x: scroll; /* Включаем горизонтальную прокрутку */
+    overflow-y: hidden; /* Убираем вертикальный скролл */
+    scrollbar-width: none; /* Скрываем скроллбар в Firefox */
+    margin-top: 10px;
+}
+.group-btn::-webkit-scrollbar {
+    display: none; /* Скрываем скроллбар в Chrome, Safari и Edge */
+}
+.group-btn > .btn {
+    max-width: 150px;
+    min-width: 130px;
+}
+.group-btn .accordion {
+    flex-grow: 1;
+}
+.group-btn .accordion.show{
+    background-color: var(--bs-second-bg);
+    border: 1px solid var(--bs-border-bg);
+    color: var(--bs-body-color);
+}
+.end {
+    margin-left: auto;
+}
+
+/* 🌟 Стили для страницы настройки */
+.selected_themes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Адаптивная сетка */
+    gap: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.selected_theme_block{
+    font-size: 17px;
+    color: var(--bs-body-color);
+}
+.d-none{
+    display: none;
+}
+label{
+    cursor: pointer;
+}
+.theme_block{
+    text-align: start;
+    border-radius: var(--bs-radius);
+    padding: 10px;
+    outline: 1px solid var(--bs-second-bg);
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    transition: .1s transform ease-in;
+    margin-bottom: 5px;
+    pointer-events: none;
+    user-select: none;
+}
+.theme_block:hover{
+    transform: scale(1.01);
+}
+.theme_block.dark{
+    background-color: #161617;
+}
+.theme_block.dark span{
+    font-size: 17px;
+    color: #c9cccf;
+    width: 100%;
+}
+.theme_block.dark a{
+    color: #49e2c1;
+    width: 100%;
+}
+.theme_block.dark button{
+    min-width: 46px;
+    height: 46px;
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: var(--bs-radius);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.theme_block.light{
+    background-color: #f1f3f5;
+}
+.theme_block.light span{
+    font-size: 17px;
+    color: #161617;
+    width: 100%;
+}
+.theme_block.light a{
+    color: #49e2c1;
+    width: 100%;
+}
+.theme_block.light button{
+    min-width: 46px;
+    height: 46px;
+    background-color: #b8b8b8;
+    border: none;
+    border-radius: var(--bs-radius);
+    color: #161617;
+    cursor: pointer;
+    width: 100%;
+}
+.dropdown{
+    padding: 20px;
+    color: var(--bs-body-color);
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bs-second-bg);
+    margin-bottom: 10px;
+    border-radius: var(--bs-radius);
+}
+.dropdown select{
+    background-color: var(--bs-second-bg);
+    color: var(--bs-body-color);
+    font-size: 14px;
+    border: none;
+    outline: none;
+    text-align: end;
+}
+.dropdown select:hover{
+    color: var(--bs-white-color);
+}
+.dropdown option{
+    font-size: 14px;
+}
+.safety{
+    padding: 20px;
+    color: var(--bs-body-color);
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bs-second-bg);
+    margin-bottom: 10px;
+    border-radius: var(--bs-radius);
+}
+.safety small{
+    color: var(--bs-body-second-color);
+    font-size: 14px;
+    font-family: monospace;
+}
+.safety a{
+    color: var(--bs-accent-color);
+    font-size: 14px;
+}
+input[type="radio"] {
+    appearance: none; /* Скрываем стандартный стиль радио */
+    visibility: hidden; /* Либо скрываем визуально */
+    position: absolute; /* Чтобы не занимал место в документе */
+}
+input[type="radio"]:checked + label .theme_block.dark {
+    outline: 1px solid var(--bs-accent-color);
+}
+input[type="radio"]:checked + label .theme_block.light {
+    outline: 1px solid var(--bs-accent-color);
+}
+
+/* Стили для поиска */
+.input_{
+    width: 100%;
+    background-color: var(--bs-second-bg);
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid var(--bs-second-bg);
+    border-radius: 10px;
+    color: var(--bs-body-second-color);
+    transition: border .2s;
+}
+.input_:hover{
+    border: 1px solid var(--bs-accent-color-hover);
+}
+.input_:active, .input_:focus-visible{
+    border: 1px solid var(--bs-accent-color);
+    caret-color: var(--bs-accent-color);
+}
+
+.group_input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.group_input button{
+    width: 40px;
+    height: 38px;
+    background-color: var(--bs-second-bg);
+    outline: none;
+    border: 1px solid var(--bs-second-bg);
+    border-radius: 10px;
+    color: var(--bs-body-second-color);
+    cursor: pointer;
+}
+.group_input button img{
+    width: 18px;
+    height: 18px;
+}
+
+.profile-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.logo{
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.logo span{
+    font-size: 17px;
+    font-weight: 500;
+}
+.logo img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--bs-radius);
+}
+.block_info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+._info{
+    min-width: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 15px;
+    border-radius: var(--bs-radius);
+    background-color: var(--bs-second-bg);
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+._info:hover{
+    transform: scale(1.05);
+}
+._info span{
+    color: var(--bs-body-second-color);
+}
+
+.info-user{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status{
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    outline: solid 1px var(--bs-second-bg);
+    margin-left: 8px;
+}
+.status.online{
+    background-color: var(--bs-accent-color);
+    outline: solid 1px var(--bs-second-bg);
+}
+.status.offline{
+    background-color: var(--bs-second-bg);
+    outline: solid 1px var(--bs-second-bg-active);
+}
+
+/* 🌟 Адаптивные стили */
+@media (max-width: 1400px) {
+    main .container-right {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    footer {
+        display: block;
+    }
+    main .container-left {
+        display: none;
+    }
+    header .container-center {
+        display: none;
+    }
+    header .container-left,
+    header .container-right {
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column; /* Элементы в колонку */
+        align-items: stretch; /* Растягиваем элементы на всю ширину */
+    }
+
+    .block_info {
+        width: 100%; /* Занимает всю ширину */
+        gap: 5px;
+    }
+
+    ._info {
+        min-width: 100px; /* Каждая карточка занимает всю ширину */
+        text-align: center; /* Текст по центру */
+    }
+    .logo{
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+    .logo img{
+        height: 140px;
+        width: auto;
+    }
+    .logo span{
+        width: 100%;
+        margin: 0;
+    }
+}
+@media (min-width: 768px) {
+    .container{ max-width: 100%; }
+}
+@media (min-width: 992px) {
+    .container{ max-width: 100%; }
+}
+@media (min-width: 1200px) {
+    .container{ max-width: 100%; }
+}
+@media (min-width: 1400px) {
+    .container{ max-width: 1320px; }
+}

@@ -1,0 +1,182 @@
+/* Общие стили для контейнера друзей */
+.profile-friends{
+    margin: 60px 0px 25px 0px;
+}
+.friends-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 14px;
+    max-width: 100%;
+    margin: 15px auto;
+}
+
+/* Карточка друга */
+.friend-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Картинка друга */
+.friend-image {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.friend-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+    border-radius: 50%;
+}
+
+/* Информация о друге */
+.friend-info {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Эффект при наведении */
+.friend-card:hover .friend-image img {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.friend-card:hover .friend-image {
+    border-radius: 20px;
+}
+
+/* --- Модальное окно --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content-f {
+    background: var(--bs-body-bg);
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    max-width: 600px;
+    width: 90%;
+    animation: modalFadeIn 0.3s ease-in-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-left-f {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-left-f img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.modal-right-f {
+    flex: 2;
+    padding: 20px;
+}
+
+.modal-right-f h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.modal-right-f p {
+    margin: 8px 0;
+    color: var(--bs-body-second-color);
+}
+
+.modal-actions-f {
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.message-btn, .add-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.message-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.add-btn {
+    background: #2196f3;
+    color: white;
+}
+
+.close-btn-f {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background: transparent;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Адаптивность */
+@media (min-width: 1024px) {
+    .friends-container {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .friends-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .modal-content-f {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .friends-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
