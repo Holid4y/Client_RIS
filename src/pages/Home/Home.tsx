@@ -23,8 +23,8 @@ const Home: React.FC = () => {
                         <div className='carusel'>
                             <Carusel>
                                 {[
-                                    '/src/assets/img/people/women/01.jpg',
-                                    '/src/assets/img/people/women/02.jpg',
+                                    '../../../src/assets/img/people/women/02.jpg',
+                                    './src/assets/img/people/women/02.jpg',
                                     '/src/assets/img/people/women/03.jpg',
                                     '/src/assets/img/people/women/04.jpg',
                                     '/src/assets/img/people/women/06.jpg',
