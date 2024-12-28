@@ -451,20 +451,19 @@ footer {
 
 .group-btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     gap: 10px;
     width: 100%;
-    overflow-x: scroll; /* Включаем горизонтальную прокрутку */
-    overflow-y: hidden; /* Убираем вертикальный скролл */
-    scrollbar-width: none; /* Скрываем скроллбар в Firefox */
-    margin-top: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
 }
 .group-btn::-webkit-scrollbar {
-    display: none; /* Скрываем скроллбар в Chrome, Safari и Edge */
+    display: none;
 }
 .group-btn > .btn {
-    max-width: 150px;
+    max-width: 100%;
     min-width: 130px;
 }
 .group-btn .accordion {
@@ -639,7 +638,7 @@ input[type="radio"]:checked + label .theme_block.light {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .group_input button{
     width: 40px;

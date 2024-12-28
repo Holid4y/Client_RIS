@@ -8,6 +8,8 @@ import PopularMusicAccordion from './components/PopularMusicAccordion';
 import NewMusicAccordion from './components/NewMusicAccordion';
 import MenuMobile from '../../components/Menu/Mobile/MenuMobile';
 
+import SVG from '../../components/SVG/SVG';
+
 const Music: React.FC = () => {
     const { isCollapsed, handleCollapse } = useMenu(); // Получаем состояние и функцию
     const [activeContent, setActiveContent] = useState<string>('content1'); // Состояние для активного контента
@@ -30,7 +32,12 @@ const Music: React.FC = () => {
                         <Menu isCollapsed={isCollapsed} handleCollapse={handleCollapse} />
                     </div>
                     <div className="container-center">
-                    <input type="text" className="input_" placeholder="@oleg_yurlov"/>
+                    <div className="group_input">
+                        <input type="text" className="input_" placeholder="Поиск музыки"/>
+                        <button id="toggleViewBtn">
+                            <SVG name="plus" />
+                        </button>
+                    </div>
                     <div className="group-btn">
                         
                             <button
@@ -54,7 +61,6 @@ const Music: React.FC = () => {
                             >
                                 Новое
                             </button>
-                            <button className="btn secondary end">Добавить</button>
                         </div>
 
                         <div className={`accordion-content ${activeContent === 'content1' ? 'show' : ''}`} id="content1" >

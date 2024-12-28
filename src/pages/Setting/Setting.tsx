@@ -52,7 +52,6 @@ const Setting: React.FC = () => {
                             >
                                 Приватность
                             </button>
-                            <button className="btn danger end">Выйти</button>
                         </div>
 
                         <div className={`accordion-content ${activeContent === 'content1' ? 'show' : ''}`} id="content1" >
