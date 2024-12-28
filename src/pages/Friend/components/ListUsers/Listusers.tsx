@@ -1,17 +1,33 @@
+import React, { useState, useEffect } from "react";
 import SVG from "../../../../components/SVG/SVG";
 
 function Listuser() {
+    // Инициализация состояния из localStorage или дефолтное значение
+    const [isBlockView, setIsBlockView] = useState(() => {
+        return localStorage.getItem('viewMode') === 'line' ? false : true;
+    });
+
+    // Обновление localStorage при изменении состояния
+    useEffect(() => {
+        localStorage.setItem('viewMode', isBlockView ? 'block' : 'line');
+    }, [isBlockView]);
+
+    // Переключение состояния
+    const toggleView = () => {
+        setIsBlockView(prev => !prev);
+    };
+
     return (
         <>
             <div className="group_input">
                 <input type="text" className="input_" placeholder="@oleg_yurlov"/>
-                <button id="toggleViewBtn">
-                    <SVG name="dot_rev2" />
+                <button id="toggleViewBtn" onClick={toggleView}>
+                    <SVG name={isBlockView ? "widget_block" : "widget_line"} />
                 </button>
             </div>
 
-            <div className="media-container block" id="mediaContainer">
-                <div className="card">
+            <div className={`media-container ${isBlockView ? 'block' : 'line'}`} id="mediaContainer">
+            <div className="card">
                     <img src="images/people/women/01.jpg" alt="Card Image"/>
                     <div className="content">
                         <div className="content-info">
@@ -121,6 +137,7 @@ function Listuser() {
                 </div>
             </div>
         </>
-    )
+    );
 }
+
 export default Listuser;

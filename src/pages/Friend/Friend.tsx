@@ -16,7 +16,7 @@ const Friend: React.FC = () => {
                     <div className={`container-left ${isCollapsed ? 'collapsed' : ''}`}>
                         <Menu isCollapsed={isCollapsed} handleCollapse={handleCollapse} />
                     </div>
-                    <div className="container-center scrollable">
+                    <div className="container-center">
                         <Listuser />
                     </div>
                     <div className="container-right">

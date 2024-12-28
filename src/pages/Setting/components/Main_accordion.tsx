@@ -1,4 +1,5 @@
 import ThemeToggle from "../../../components/Themes/ThemeToggle";
+import SnowfallToggle from "../../../components/Snowfall/SnowfallToggle";
 
 function MainAccordion() {
     return (
@@ -23,6 +24,8 @@ function MainAccordion() {
                     <option value="en">Китайский</option>
                 </select> 
             </div>
+            
+            <SnowfallToggle />
         </>
     )
 }

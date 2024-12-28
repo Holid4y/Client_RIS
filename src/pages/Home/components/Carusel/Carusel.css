@@ -1,11 +1,16 @@
-.slick-list{
+
+.carousel-container {
   width: 100%;
+  margin: 0 auto;
+}
+.slick-list{
+  width: 90%;
+  margin: 0 auto;
   border-radius: 20px;
 }
 
 .slick-slide {
-  /* padding: 0 10px; */
-  padding-right: 10px;
+  padding: 0 6px;
   box-sizing: border-box;
 }
 
@@ -19,36 +24,29 @@
   position: absolute;
   cursor: pointer;
   display: flex;
+  border-radius: 20px;
   border: var(--bs-second-bg);
   justify-content: center;
   text-align: center;
   align-items: center;
   color: var(--bs-body-second-color);
-  opacity: 0;
+  opacity: 0.5;
   z-index: 10;
   transform: scale(1.01);
-  transition: transform .1s ease, opacity .3s ease;
+  transition: opacity .3s ease;
 }
 .carousel-container:hover .next-btn-carusel, .carousel-container:hover .prev-btn-carusel{
     opacity: 1;
 }
 .next-btn-carusel:hover,
 .prev-btn-carusel:hover {
-  transform: scale(1.04);
   background-color: var(--bs-second-bg-active);
 }
 .next-btn-carusel {
   left: 0px;
-  border-radius: 4px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  
 }
 .prev-btn-carusel {
   right: 0px;
-  border-radius: 4px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 
 .slick-dots-item {
@@ -84,13 +82,13 @@
   justify-content: center;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 992px) {
     .next-btn-carusel,
     .prev-btn-carusel {
         display: none;
     }
 
-    .carousel-container {
+    .slick-list {
         width: 100%;
       }
       

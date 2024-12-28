@@ -14,16 +14,17 @@
 .friend-card {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 10px;
     text-align: center;
     cursor: pointer;
+    transition: transform .3s ease;
 }
 
 /* Картинка друга */
 .friend-image {
     width: 100%;
     padding-top: 100%;
-    border-radius: 50%;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
     transition: all 0.2s ease-in-out;
@@ -36,8 +37,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.2s ease-in-out;
-    border-radius: 50%;
 }
 
 /* Информация о друге */
@@ -56,10 +55,6 @@
     left: 0;
 }
 
-.friend-card:hover .friend-image {
-    border-radius: 20px;
-}
-
 /* --- Модальное окно --- */
 .modal-overlay {
     position: fixed;
@@ -67,7 +62,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: saturate(180%) blur(20px);
     display: flex;
     align-items: center;
     justify-content: center;
