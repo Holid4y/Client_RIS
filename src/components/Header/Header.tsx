@@ -1,4 +1,5 @@
 import React from 'react';
+import SVG from '../SVG/SVG';
 
 interface HeaderProps {
     isCollapsed: boolean;
@@ -15,7 +16,10 @@ const Header: React.FC<HeaderProps> = ({ isCollapsed }) => {
                     аудио плеер
                 </div>
                 <div className="container-right">
-                    кнопка профиля
+                    <div className="btn-profile">
+                        <SVG name="bottom_rev2" />
+                        <img src="images/people/women/01.jpg" alt="/newjesus" />
+                    </div>
                 </div>
             </div>
         </header>

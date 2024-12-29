@@ -20,7 +20,6 @@ const Home: React.FC = () => {
                     </div>
                     <div className="container-center scroll-hidden">
                         <Infouser />
-
                         <div className='carusel'>
                             <Carusel>
                                 {[

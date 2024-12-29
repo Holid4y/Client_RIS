@@ -9,56 +9,57 @@ interface CaruselProps {
   children: React.ReactNode[];
 }
 
-
+// Стрелка "Вперёд"
 function SampleNextArrow(props) {
-    const { onClick } = props;
-    return (
-        <div className="prev-btn-carusel" onClick={onClick}>
-            {/* &#10093; */}
-            <SVG className="svg-icon" name="right_rev2" />
-            
-        </div>
-    );
-  }
-  
-  function SamplePrevArrow(props) {
-    const { onClick } = props;
-    return (
-        <div className="next-btn-carusel" onClick={onClick}>
-            {/* &#10092; */}
-            <SVG className="svg-icon" name="left_rev2" />
-        </div>
-    );
-  }
+  const { onClick } = props;
+  return (
+    <div className="prev-btn-carusel" onClick={onClick}>
+      <SVG className="svg-icon" name="right_rev2" />
+    </div>
+  );
+}
 
+// Стрелка "Назад"
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div className="next-btn-carusel" onClick={onClick}>
+      <SVG className="svg-icon" name="left_rev2" />
+    </div>
+  );
+}
+
+// Основной компонент
 const Carusel: React.FC<CaruselProps> = ({ children }) => {
+  const showArrows = children.length > 4; // Отображать стрелки, если больше 4 элементов
+  const isInfinite = children.length > 4; // Включить бесконечную прокрутку, если больше 4 элементов
+
   const settings = {
-    centerMode: false, // Центрирование слайда
-    dots: true, // Точки для перелистывания
-    slidesToShow: 4, // Количество видимых слайдов
-    infinite: true, // Бесконечная прокрутка
-    speed: 300, // Скорость анимации
-    swipeToSlide: true, // Прокрутка слайдов при свайпе
-    centerPadding: "0px", // Ширина доп блоков по краям
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    customPaging: () => (<div className="slick-dots-item"></div>),
+    centerMode: false,
+    dots: true,
+    slidesToShow: 4, // Ограничиваем количество видимых слайдов
+    infinite: isInfinite,
+    speed: 300,
+    swipeToSlide: true,
+    centerPadding: "0px",
+    nextArrow: showArrows ? <SampleNextArrow /> : null,
+    prevArrow: showArrows ? <SamplePrevArrow /> : null,
+    customPaging: () => <div className="slick-dots-item"></div>,
     responsive: [
       {
         breakpoint: 576,
-        settings: { slidesToShow: 2 },
+        settings: { slidesToShow: Math.min(children.length, 2) },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 3 },
+        settings: { slidesToShow: Math.min(children.length, 3) },
       },
       {
         breakpoint: 992,
-        settings: { slidesToShow: 4 },
+        settings: { slidesToShow: Math.min(children.length, 4) },
       },
     ],
   };
-
   return (
     <div className="carousel-container">
       <Slider {...settings}>

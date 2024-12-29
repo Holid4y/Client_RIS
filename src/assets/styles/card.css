@@ -254,6 +254,10 @@
     margin-left: 10px;
 }
 
+.friend-info h5{
+    color: var(--bs-body-second-color);
+}
+
 /* Дополнительные стили */
 @media (max-width: 768px) {
     .media-container.block {

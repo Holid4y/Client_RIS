@@ -19,7 +19,7 @@ const Message: React.FC = () => {
                         Message
                     </div>
                     <div className="container-right">
-                        просто заглушка
+                        
                     </div>
                 </div>
             </main>
